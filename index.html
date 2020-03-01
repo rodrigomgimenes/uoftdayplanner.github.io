@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+	<!--- Basic Page Needs
+ 	 ================================================== -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html" />
+	<meta name="description" content="Third-Party APIs: Work Day Scheduler">
+	<meta name="author" content="Rodrigo M. Gimenes">
+  
+	<title>Day Planner</title>
+
+	<!-- Mobile Specific Metas
+     ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+	 ================================================== -->
+	<link rel="stylesheet" type="text/css" media="all" href="./css/fonts.css"> 
+	<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/nav.css">
+
+	<!-- Favicons
+     ================================================== -->
+	<link rel="shortcut icon" href="./favicon/favicon.png" />
+
+	<!-- jQuery
+     ================================================== -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Javascript
+     ================================================== -->
+	<script type="text/javascript" src="js/script.js"></script>
+
+<body>			       
+	<div class="wrap">
+		<div class="header">
+	      	<div class="header_top">
+				<div class="menu">
+					<h1>CalenDaily</h1>
+				</div>	
+				<div class="profile_details">
+				    <div id="loginContainer">
+				        <a id="loginButton" class=""><span>Me</span></a>   
+				        <div id="loginBox">                
+				            <form id="loginForm">
+				                <fieldset id="body">
+				                	<div class="user-info">
+							        	<h4>Hello,<a href=""> Rodrigo</a></h4>
+							        	<ul>
+							        		<li class="logout"><a href=""> Sign out</a></li>
+							        		<div class="clear"></div>		
+							        	</ul>
+							        </div>			                            
+				                </fieldset>
+				            </form>
+				        </div>
+				    </div>
+				    <div class="profile_img">	
+				        <a href=""><img src="./images/memoji_profile.jpg" alt="User Profile Pic" /></a>
+				    </div>		
+				    <div class="clear"></div>		  	
+				</div>	
+		 		<div class="clear"></div>				 
+			</div>
+		</div>	  					     
+	</div>
+
+	<div class="main">  
+	    <div class="wrap">  
+
+			<!-- LEFT column
+     		 ================================================== -->
+	       	<div class="column_left">
+				<div class="column_right_grid date_events">
+					<h3 class="calendar-month"></h3>
+					<ul id="slide" class="event_dates"><li class="current-date"></li></ul>
+					<div class="calendar-button"></div>
+			 	</div>
+
+				<div class="weather">
+					<h3><i><img src="./icons/location.png" alt="Location Image" /> </i> Toronto-ON / CA</h3>
+
+				   	<div class="today_temp">
+					 	<div class="temp">
+						 	<figure>Sat 22/02<span>6<em>o</em></span></figure>
+					 	</div>
+					 	<img src="./icons/weather_sun.png" alt="Weather Image" />
+					 </div>
+					 
+					<div class="temp_list">
+						<ul>
+							<!-- <li class="active"><p href=""><span class="day_name">Sun</span>&nbsp; 23/02  -->
+							<li><a href=""><span class="day_name">Sun</span>&nbsp; 23/02
+							<label class="digits">8<em>o</em> <i><img src="./icons/weather_sun_icon1.png" alt="Weather Image" /></i></label><div class="clear"></div></a>
+								   
+							<li><a href=""><span class="day_name">Mon</span>&nbsp; 24/02 
+							<label class="digits">9.4<em>o</em> <i><img src="./icons/weather_sun_icon2.png" alt="Weather Image" /></i></label><div class="clear"></div></a></li>
+						</ul>
+				   </div>
+			   	</div>
+	  		</div> 
+			  
+			  
+			<!-- MIDDLE column
+     		 ================================================== -->
+            <div class="column_middle">
+              	<div class="column_middle_grid1">
+		         	<div class="profile_picture">
+						<a href=""><img src="./images/memoji_mindblown.jpg" alt="User Profile Pic" /></a>
+		            	<div class="profile_picture_name">
+		            		<h2>Rodrigo</h2>
+		            		<p>"Make today so awesome that yesterday gets jealous."</p>
+		            	</div>
+					</div>
+					  
+		           	<div class="articles_list">
+		           	  	<ul>
+		           	  		<li><a href="" class="red"><img src="./icons/invites.png" alt="" /></a></li>
+		           	  		<li><a href="" class="green"><img src="./icons/favorite.png" alt="Event Days" /></a></li>
+		           	  		<li><a href="" class="yellow"><img src="./icons/events.png" alt="Events Icon" /></a></li>
+		           	  		<div class="clear"></div>	
+		           	  	</ul>
+		           	</div>
+		       	</div>           
+    	    </div>
+			
+			
+			<!-- RIGHT column
+     		 ================================================== -->
+            <div class="column_right">
+				<div class="events">
+					<h3>
+						<i><img src="./icons/events-hover.png" alt="" /></i>
+						My Events
+						<span><a href="" id="addButton" class=""><img src="./icons/sign_add-hover.png" alt="Add Event" /></a></span>
+					</h3>		         
+
+				 	<div class="events_list">
+						<!-- Hidden Box to create a new Event -->
+				        <div id="eventBox">                
+				            <form id="eventForm">
+				                <fieldset id="eventbody">
+				                	<div class="event-info">
+										<h4>Type down your new <a href="">Event</a></h4>
+										<input type="text" id="event-input">
+							        	<ul>
+							        		<li class="add-event"><a href=""> Add Event</a></li>
+							        	</ul>
+							        </div>			                            
+				                </fieldset>
+				            </form>
+						</div>
+
+					   	<ul class="events_ul">
+						   	<!-- <li id="event-0" class="event_volatile">
+								Event Hint: My  
+								<a href="">@homework5</a> 
+								is finally 
+								<a href="">#done</a>
+								<span>01/01/0001 - 01:01:01</span>
+								<p class="remove-event"><img id="removebutton" src="./icons/sign_remove.png" alt="Delete Event" /></p>
+							</li> -->
+						 </ul>
+					</div>
+		   		</div>
+            </div>
+			<div class="clear"></div>
+			
+ 	 	</div>
+  	</div>
+	
+	<!-- Footer
+	 ================================================== -->
+	 <div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<!-- =================== Copyright ==================== -->
+			<div id="copyright">
+				<ul  class="menu">
+					<li>&copy; Copyright 2020. All rights reserved</li>
+					<li>Design by <a href="./images/rmg.jpg" alt="RMG">RMG</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div> 
+
+</body>
+</html>
+
